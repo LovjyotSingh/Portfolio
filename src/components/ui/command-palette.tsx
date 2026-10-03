@@ -149,8 +149,8 @@ function PalettePanel({ onClose }: { onClose: () => void }) {
         window.setTimeout(() => switchTheme(readTheme() === 'dark' ? 'light' : 'dark'), 120);
       },
     },
-    { id: 'act-mail', group: 'Actions', label: 'Write an email', hint: profile.email, keywords: 'contact message', icon: <AtSign className={iconCls} />, run: () => { onClose(); window.location.href = socials.email.href; } },
-    { id: 'act-call', group: 'Actions', label: 'Call', hint: profile.phoneDisplay, keywords: 'phone mobile', icon: <Phone className={iconCls} />, run: () => { onClose(); window.location.href = profile.phoneHref; } },
+    { id: 'act-mail', group: 'Actions', label: 'Write an email', hint: profile.email, keywords: 'contact message', icon: <AtSign className={iconCls} />, run: () => { onClose(); window.location.assign(socials.email.href); } },
+    { id: 'act-call', group: 'Actions', label: 'Call', hint: profile.phoneDisplay, keywords: 'phone mobile', icon: <Phone className={iconCls} />, run: () => { onClose(); window.location.assign(profile.phoneHref); } },
     { id: 'link-github', group: 'Links', label: 'GitHub', hint: socials.github.handle, keywords: 'code repos', icon: <BrandIcon icon={siGithub} className={iconCls} />, run: () => openExternal(socials.github.href) },
     { id: 'link-linkedin', group: 'Links', label: 'LinkedIn', hint: socials.linkedin.handle, keywords: 'profile network', icon: <BrandIcon icon={siLinkedin} className={iconCls} />, run: () => openExternal(socials.linkedin.href) },
     ...projectLinks.flatMap((p) => [
