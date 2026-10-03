@@ -27,7 +27,8 @@ import {
   type BrandIconData,
 } from '@/components/icons/brand-icons';
 
-export type Skill = { name: string; icon?: BrandIconData; note?: string };
+export type ProjectId = 'offerforge' | 'syncflow';
+export type Skill = { name: string; icon?: BrandIconData; note?: string; usedIn?: ProjectId[] };
 export type SkillGroup = {
   id: string;
   title: string;
@@ -41,12 +42,12 @@ export const skillGroups: SkillGroup[] = [
     title: 'Frontend',
     blurb: 'Interfaces that feel instant, from component architecture to motion.',
     skills: [
-      { name: 'React', icon: siReact },
-      { name: 'Next.js', icon: siNextdotjs },
-      { name: 'TypeScript', icon: siTypescript },
-      { name: 'Tailwind CSS', icon: siTailwindcss },
-      { name: 'Framer Motion', icon: siFramer },
-      { name: 'Vite', icon: siVite },
+      { name: 'React', icon: siReact, usedIn: ['offerforge', 'syncflow'] },
+      { name: 'Next.js', icon: siNextdotjs, usedIn: ['syncflow'] },
+      { name: 'TypeScript', icon: siTypescript, usedIn: ['syncflow'] },
+      { name: 'Tailwind CSS', icon: siTailwindcss, usedIn: ['offerforge', 'syncflow'] },
+      { name: 'Framer Motion', icon: siFramer, usedIn: ['offerforge'] },
+      { name: 'Vite', icon: siVite, usedIn: ['offerforge'] },
     ],
   },
   {
@@ -54,10 +55,10 @@ export const skillGroups: SkillGroup[] = [
     title: 'Real-time',
     blurb: 'Rooms, presence and conflict-free merging over WebSockets.',
     skills: [
-      { name: 'Socket.io', icon: siSocketdotio },
-      { name: 'Yjs (CRDT)' },
-      { name: 'Live presence' },
-      { name: 'BlockNote' },
+      { name: 'Socket.io', icon: siSocketdotio, usedIn: ['syncflow'] },
+      { name: 'Yjs (CRDT)', usedIn: ['syncflow'] },
+      { name: 'Live presence', usedIn: ['syncflow'] },
+      { name: 'BlockNote', usedIn: ['syncflow'] },
     ],
   },
   {
@@ -65,10 +66,10 @@ export const skillGroups: SkillGroup[] = [
     title: 'Backend',
     blurb: 'APIs that stay correct when requests race each other.',
     skills: [
-      { name: 'Node.js', icon: siNodedotjs },
-      { name: 'Express.js', icon: siExpress },
-      { name: 'REST APIs' },
-      { name: 'JWT auth', icon: siJsonwebtokens },
+      { name: 'Node.js', icon: siNodedotjs, usedIn: ['offerforge', 'syncflow'] },
+      { name: 'Express.js', icon: siExpress, usedIn: ['offerforge', 'syncflow'] },
+      { name: 'REST APIs', usedIn: ['offerforge', 'syncflow'] },
+      { name: 'JWT auth', icon: siJsonwebtokens, usedIn: ['offerforge', 'syncflow'] },
       { name: 'Webhooks' },
       { name: 'Microservices' },
     ],
@@ -78,8 +79,8 @@ export const skillGroups: SkillGroup[] = [
     title: 'Data',
     blurb: 'Choosing the right store for each kind of state.',
     skills: [
-      { name: 'MongoDB', icon: siMongodb },
-      { name: 'Redis', icon: siRedis },
+      { name: 'MongoDB', icon: siMongodb, usedIn: ['offerforge', 'syncflow'] },
+      { name: 'Redis', icon: siRedis, usedIn: ['syncflow'] },
       { name: 'MySQL', icon: siMysql },
       { name: 'SQL' },
     ],
@@ -89,10 +90,10 @@ export const skillGroups: SkillGroup[] = [
     title: 'Applied AI',
     blurb: 'LLM pipelines with rubrics, guardrails and honest fallbacks.',
     skills: [
-      { name: 'Gemini API', icon: siGooglegemini },
-      { name: 'OpenRouter', icon: siOpenrouter },
-      { name: 'Rubric evaluation' },
-      { name: 'Prompt-injection fencing' },
+      { name: 'Gemini API', icon: siGooglegemini, usedIn: ['offerforge'] },
+      { name: 'OpenRouter', icon: siOpenrouter, usedIn: ['offerforge'] },
+      { name: 'Rubric evaluation', usedIn: ['offerforge'] },
+      { name: 'Prompt-injection fencing', usedIn: ['offerforge'] },
     ],
   },
   {
@@ -100,11 +101,11 @@ export const skillGroups: SkillGroup[] = [
     title: 'Cloud & tooling',
     blurb: 'Shipping and keeping it running.',
     skills: [
-      { name: 'Docker', icon: siDocker },
-      { name: 'Vercel', icon: siVercel },
-      { name: 'Render', icon: siRender },
+      { name: 'Docker', icon: siDocker, usedIn: ['syncflow'] },
+      { name: 'Vercel', icon: siVercel, usedIn: ['offerforge', 'syncflow'] },
+      { name: 'Render', icon: siRender, usedIn: ['offerforge', 'syncflow'] },
       { name: 'CI/CD', icon: siGithubactions },
-      { name: 'Git', icon: siGit },
+      { name: 'Git', icon: siGit, usedIn: ['offerforge', 'syncflow'] },
       { name: 'Postman', icon: siPostman },
     ],
   },
@@ -112,11 +113,11 @@ export const skillGroups: SkillGroup[] = [
 
 export const languages: Skill[] = [
   { name: 'Java', icon: siOpenjdk },
-  { name: 'TypeScript', icon: siTypescript },
-  { name: 'JavaScript', icon: siJavascript },
+  { name: 'TypeScript', icon: siTypescript, usedIn: ['syncflow'] },
+  { name: 'JavaScript', icon: siJavascript, usedIn: ['offerforge'] },
   { name: 'SQL' },
-  { name: 'HTML', icon: siHtml5 },
-  { name: 'CSS', icon: siCss },
+  { name: 'HTML', icon: siHtml5, usedIn: ['offerforge', 'syncflow'] },
+  { name: 'CSS', icon: siCss, usedIn: ['offerforge', 'syncflow'] },
 ];
 
 export const fundamentals = [

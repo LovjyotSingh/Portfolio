@@ -514,6 +514,35 @@ html.lenis body {
   animation-play-state: paused;
 }
 
+/* Stack chips: brand colour on hover, dimmed when a project filter excludes them. */
+[data-chip] {
+  transition:
+    opacity 0.35s ease,
+    filter 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease,
+    background-color 0.35s ease;
+}
+[data-chip] svg {
+  transition: color 0.3s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  [data-chip]:hover svg {
+    color: var(--brand, currentColor);
+  }
+}
+[data-filter="offerforge"] [data-chip]:not([data-used~="offerforge"]),
+[data-filter="syncflow"] [data-chip]:not([data-used~="syncflow"]) {
+  opacity: 0.3;
+  filter: grayscale(1);
+}
+[data-filter="offerforge"] [data-chip][data-used~="offerforge"],
+[data-filter="syncflow"] [data-chip][data-used~="syncflow"] {
+  border-color: color-mix(in oklab, var(--accent) 50%, transparent);
+  background-color: var(--accent-soft);
+  color: var(--fg);
+}
+
 /* ------------------------------------------------------------------ */
 /*  Demo controls                                                      */
 /* ------------------------------------------------------------------ */
