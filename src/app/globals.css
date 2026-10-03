@@ -704,6 +704,24 @@ html.lenis body {
   animation: log-in 0.5s var(--ease-out-quart) both;
 }
 
+/* Footer wordmark: cropped by the footer edge; letters lift out of the crop on hover. */
+.footer-wordmark {
+  color: color-mix(in oklab, var(--fg) 8%, transparent);
+  mask-image: linear-gradient(to bottom, #000 15%, transparent 95%);
+}
+.footer-wordmark span span {
+  transition:
+    translate 0.9s var(--ease-out-expo),
+    color 0.5s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .footer-wordmark span span:hover {
+    translate: 0 -0.16em;
+    color: color-mix(in oklab, var(--accent) 75%, transparent);
+    transition-duration: 0.35s, 0.2s;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

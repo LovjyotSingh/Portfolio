@@ -3,8 +3,11 @@ export type Theme = 'dark' | 'light';
 export const THEME_STORAGE_KEY = 'ls-theme';
 export const THEME_COLORS: Record<Theme, string> = { dark: '#0b0a09', light: '#f4f1ea' };
 
-/** Runs in <head> before first paint so the stored theme never flashes. */
-export const themeBootScript = `(function(){try{var t=localStorage.getItem('${THEME_STORAGE_KEY}');if(t!=='light'&&t!=='dark')t='dark';var d=document.documentElement;d.dataset.theme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='light'?'${THEME_COLORS.light}':'${THEME_COLORS.dark}');}catch(e){}})();`;
+/**
+ * Runs in <head> before first paint so the stored theme never flashes. The theme-color
+ * meta may be parsed after this script, so the light colour is re-applied once the DOM is ready.
+ */
+export const themeBootScript = `(function(){try{var t=localStorage.getItem('${THEME_STORAGE_KEY}');if(t!=='light'&&t!=='dark')t='dark';document.documentElement.dataset.theme=t;if(t==='light'){var s=function(){var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content','${THEME_COLORS.light}');};s();document.addEventListener('DOMContentLoaded',s);}}catch(e){}})();`;
 
 export function readTheme(): Theme {
   return document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
