@@ -1,4 +1,4 @@
-// Mirrors OfferForge-AI/backend/src/config/interviewRoles.js (roles, sections, rubrics, first bank question).
+// Mirrors OfferForge-AI/backend/src/config/interviewRoles.js (roles, sections, rubrics, levels, first bank question).
 // Regenerate from that file if the product catalog changes.
 
 export type SectionKey = "dsa" | "system-design" | "oop" | "cs-fundamentals" | "behavioral" | "javascript" | "react" | "web-fundamentals" | "backend" | "databases" | "sql" | "statistics" | "analytics-case" | "ml" | "requirements" | "product-sense" | "metrics" | "execution";
@@ -489,14 +489,19 @@ export const interviewRoles: readonly InterviewRole[] = [
 export const interviewLevels = [
   {
     "id": "easy",
-    "label": "Entry level"
+    "label": "Entry level",
+    "prompt": "an entry-level candidate (fresher or new graduate, 0-1 years of experience)"
   },
   {
     "id": "medium",
-    "label": "Mid level"
+    "label": "Mid level",
+    "prompt": "a mid-level candidate (2-4 years of experience)"
   },
   {
     "id": "hard",
-    "label": "Senior"
+    "label": "Senior",
+    "prompt": "a senior candidate (5+ years of experience) who is expected to show depth and trade-offs"
   }
 ] as const;
+
+export type InterviewLevelId = (typeof interviewLevels)[number]["id"];
