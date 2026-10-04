@@ -125,7 +125,7 @@ function PalettePanel({ onClose }: { onClose: () => void }) {
     {
       id: 'act-resume',
       group: 'Actions',
-      label: 'Download résumé',
+      label: 'Download resume',
       hint: 'PDF',
       keywords: 'cv resume pdf',
       icon: <ArrowDownToLine className={iconCls} />,

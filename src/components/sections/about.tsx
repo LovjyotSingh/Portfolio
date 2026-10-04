@@ -7,7 +7,7 @@ import { SectionHeader } from '@/components/ui/section-header';
 import { SpotlightCard } from '@/components/ui/spotlight-card';
 
 const statement =
-  'I’m Lovjyot, a full-stack engineer from Delhi NCR who gravitates to the parts most people avoid: keeping a document *consistent* while several people type into it at once, and making AI feedback something you can actually *trust*. I graduated in Computer Science & Engineering from USICT, GGSIPU in 2026, and I care about shipping *complete* products, from the schema and the socket server to the last pixel.';
+  'I’m Lovjyot, a full-stack engineer from Faridabad, Haryana who gravitates to the parts most people avoid: keeping a document *consistent* while several people type into it at once, and making AI feedback something you can actually *trust*. I graduated in Computer Science & Engineering from USICT, GGSIPU in 2026, and I care about shipping *complete* products, from the schema and the socket server to the last pixel.';
 
 const stats = [
   { to: 2, pad: 2, suffix: '', label: 'Products live', detail: 'Designed, built and deployed end to end' },

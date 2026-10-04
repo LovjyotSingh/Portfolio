@@ -11,7 +11,7 @@ const elsewhere = [
   { label: socials.github.label, href: socials.github.href, external: true },
   { label: socials.linkedin.label, href: socials.linkedin.href, external: true },
   { label: socials.email.label, href: socials.email.href },
-  { label: 'Résumé (PDF)', href: profile.resume.href, download: profile.resume.fileName },
+  { label: 'Resume (PDF)', href: profile.resume.href, download: profile.resume.fileName },
 ];
 
 export function SiteFooter() {

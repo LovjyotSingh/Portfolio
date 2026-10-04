@@ -14,7 +14,7 @@ const [mailbox, domain] = profile.email.split('@');
 export function Contact() {
   const details = [
     { icon: Zap, label: 'Availability', value: `${profile.availability}, open to full-time roles` },
-    { icon: MapPin, label: 'Based in', value: `${profile.city}, ${profile.region}, ${profile.country}` },
+    { icon: MapPin, label: 'Based in', value: profile.location },
     { icon: Clock3, label: 'Local time', value: <LocalTime withSeconds={false} /> },
     {
       icon: Phone,
@@ -77,7 +77,7 @@ export function Contact() {
               </Magnetic>
               <Magnetic strength={0.18}>
                 <ButtonLink href={profile.resume.href} download={profile.resume.fileName} variant="secondary" icon={<ArrowDownToLine className="size-4" />}>
-                  Résumé (PDF)
+                  Resume (PDF)
                 </ButtonLink>
               </Magnetic>
             </div>

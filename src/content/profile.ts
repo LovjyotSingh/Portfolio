@@ -6,9 +6,9 @@ export const profile = {
   role: 'Full-Stack Engineer',
   shortBio:
     'Full-stack engineer building real-time and AI-powered products with React, Next.js, Node.js and MongoDB.',
-  location: 'Faridabad, Haryana (Delhi NCR), India',
+  location: 'Faridabad, Haryana',
   city: 'Faridabad',
-  region: 'Delhi NCR',
+  region: 'Haryana',
   country: 'India',
   timeZone: 'Asia/Kolkata',
   timeZoneLabel: 'IST',

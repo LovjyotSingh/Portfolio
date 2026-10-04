@@ -83,7 +83,7 @@ export function MobileMenu({ open, onClose, onNavigate }: Props) {
                 download={profile.resume.fileName}
                 className="flex h-13 items-center justify-center gap-2 rounded-full bg-accent font-medium text-accent-ink"
               >
-                Download résumé <ArrowDownToLine className="size-4" aria-hidden />
+                Download resume <ArrowDownToLine className="size-4" aria-hidden />
               </a>
               <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
                 {[socials.github, socials.linkedin].map((s) => (

@@ -97,7 +97,7 @@ export function Hero() {
                   size="lg"
                   icon={<ArrowDownToLine className="size-4" />}
                 >
-                  Résumé
+                  Resume
                 </ButtonLink>
               </Magnetic>
             </div>

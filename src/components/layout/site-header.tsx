@@ -119,7 +119,7 @@ export function SiteHeader() {
             download={profile.resume.fileName}
             className="ml-0.5 hidden h-9 items-center gap-1.5 rounded-full bg-fg px-4 text-sm font-medium text-bg transition-[background-color,transform] duration-300 hover:bg-accent hover:text-accent-ink active:scale-95 sm:inline-flex"
           >
-            Résumé
+            Resume
             <ArrowDownToLine className="size-3.5" aria-hidden />
           </a>
           <button

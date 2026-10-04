@@ -42,7 +42,8 @@ export const metadata: Metadata = {
     'Yjs',
     'CRDT',
     'Real-time collaboration',
-    'Delhi NCR',
+    'Faridabad',
+    'Haryana',
   ],
   alternates: { canonical: '/' },
   openGraph: {

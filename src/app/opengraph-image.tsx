@@ -54,7 +54,7 @@ export default function OpenGraphImage() {
           <span style={{ margin: '0 18px', color: '#736d64' }}>·</span>
           <span style={{ fontFamily: 'Instrument Serif', fontStyle: 'italic' }}>SyncFlow</span>
         </div>
-        <span style={{ fontSize: 24, color: '#a7a095' }}>Delhi NCR</span>
+        <span style={{ fontSize: 24, color: '#a7a095' }}>Faridabad, Haryana</span>
       </div>
     </div>,
     {
