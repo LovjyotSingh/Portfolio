@@ -91,8 +91,11 @@ function PalettePanel({ onClose }: { onClose: () => void }) {
   }, [lenis]);
 
   const navigate = (id: string) => {
+    // Lenis ignores scrollTo while it is stopped, and the menu keeps it stopped
+    // until the close animation finishes. Restart it before jumping.
+    lenis?.start();
     onClose();
-    window.setTimeout(() => scrollTo(id), 40);
+    scrollTo(id);
   };
   const openExternal = (href: string) => {
     onClose();
