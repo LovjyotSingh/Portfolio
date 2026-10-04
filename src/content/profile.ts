@@ -17,7 +17,7 @@ export const profile = {
   phoneHref: 'tel:+919958473062',
   availability: 'Immediate joiner',
   resume: {
-    href: '/Lovjyot_Singh_Resume.pdf',
+    href: '/Lovjyot_Singh_Resume.pdf?v=20261004',
     fileName: 'Lovjyot_Singh_Resume.pdf',
   },
 } as const;
