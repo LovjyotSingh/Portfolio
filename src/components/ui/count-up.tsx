@@ -2,6 +2,7 @@
 
 import { animate, useInView, useReducedMotion } from 'motion/react';
 import { useEffect, useRef } from 'react';
+import { useCoarsePointer } from '@/hooks/use-coarse-pointer';
 
 type Props = { to: number; pad?: number; suffix?: string; duration?: number; className?: string };
 
@@ -12,6 +13,8 @@ export function CountUp({ to, pad = 0, suffix = '', duration = 1.6, className }:
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: '0px 0px -15% 0px' });
   const reduce = useReducedMotion();
+  const coarse = useCoarsePointer();
+  const runFor = coarse ? Math.min(duration, 0.7) : duration;
 
   useEffect(() => {
     const el = ref.current;
@@ -21,14 +24,14 @@ export function CountUp({ to, pad = 0, suffix = '', duration = 1.6, className }:
       return;
     }
     const controls = animate(0, to, {
-      duration,
+      duration: runFor,
       ease: [0.16, 1, 0.3, 1],
       onUpdate: (v) => {
         el.textContent = format(v, pad, suffix);
       },
     });
     return () => controls.stop();
-  }, [inView, reduce, to, pad, suffix, duration]);
+  }, [inView, reduce, to, pad, suffix, runFor]);
 
   return (
     <span ref={ref} className={className}>

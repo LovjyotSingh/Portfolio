@@ -50,8 +50,8 @@ export function BrowserFrame({ href, host, name, image, alt, scrollable, classNa
           className={cn(
             'h-auto w-full',
             scrollable
-              ? 'transition-[translate] duration-1400 ease-in-out-quart group-hover/frame:translate-y-[calc(-100%_+_100cqh)] group-hover/frame:duration-9000 group-focus-visible/frame:translate-y-[calc(-100%_+_100cqh)] group-focus-visible/frame:duration-9000'
-              : 'transition-[scale] duration-1000 ease-out-expo group-hover/frame:scale-[1.025]',
+              ? 'pointer-fine:transition-[translate] pointer-fine:duration-1400 pointer-fine:ease-in-out-quart pointer-fine:group-hover/frame:translate-y-[calc(-100%_+_100cqh)] pointer-fine:group-hover/frame:duration-9000 pointer-fine:group-focus-visible/frame:translate-y-[calc(-100%_+_100cqh)] pointer-fine:group-focus-visible/frame:duration-9000'
+              : 'pointer-fine:transition-[scale] pointer-fine:duration-1000 pointer-fine:ease-out-expo pointer-fine:group-hover/frame:scale-[1.025]',
           )}
         />
         {scrollable ? (
@@ -59,7 +59,7 @@ export function BrowserFrame({ href, host, name, image, alt, scrollable, classNa
             <MousePointer2 className="size-3" aria-hidden /> Hover to scroll the page
           </span>
         ) : null}
-        <span className="pointer-events-none absolute right-4 bottom-4 inline-flex translate-y-2 items-center gap-1.5 rounded-full bg-fg px-3.5 py-2 text-xs font-medium text-bg opacity-0 shadow-soft transition-[opacity,translate] duration-500 ease-out-expo group-hover/frame:translate-y-0 group-hover/frame:opacity-100 group-focus-visible/frame:translate-y-0 group-focus-visible/frame:opacity-100">
+        <span className="pointer-events-none absolute right-4 bottom-4 inline-flex translate-y-2 items-center gap-1.5 rounded-full bg-fg px-3.5 py-2 text-xs font-medium text-bg opacity-0 shadow-soft transition-[opacity,translate] duration-500 ease-out-expo pointer-fine:group-hover/frame:translate-y-0 pointer-fine:group-hover/frame:opacity-100 pointer-fine:group-focus-visible/frame:translate-y-0 pointer-fine:group-focus-visible/frame:opacity-100">
           Open live site <ArrowUpRight className="size-3.5" aria-hidden />
         </span>
       </a>

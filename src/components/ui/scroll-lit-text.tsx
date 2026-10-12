@@ -2,6 +2,7 @@
 
 import { m, useReducedMotion, useScroll, useTransform, type MotionValue } from 'motion/react';
 import { useRef } from 'react';
+import { useCoarsePointer } from '@/hooks/use-coarse-pointer';
 import { cn } from '@/lib/utils';
 
 type Token = { text: string; accent: boolean };
@@ -18,6 +19,7 @@ function tokenize(source: string): Token[] {
 export function ScrollLitText({ text, className }: { text: string; className?: string }) {
   const ref = useRef<HTMLParagraphElement>(null);
   const reduce = useReducedMotion();
+  const coarse = useCoarsePointer();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.88', 'end 0.5'] });
   const tokens = tokenize(text);
 
@@ -27,7 +29,7 @@ export function ScrollLitText({ text, className }: { text: string; className?: s
         const start = i / tokens.length;
         const end = Math.min(1, start + 2.5 / tokens.length);
         return (
-          <Word key={i} token={token} progress={scrollYProgress} range={[start, end]} still={!!reduce} />
+          <Word key={i} token={token} progress={scrollYProgress} range={[start, end]} still={!!reduce || coarse} />
         );
       })}
     </p>

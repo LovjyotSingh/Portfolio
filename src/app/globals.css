@@ -722,6 +722,25 @@ html.lenis body {
   }
 }
 
+/* Touch screens: a wandering cursor and a drifting glow fight the small hero.
+   Entrance timing is shortened so the page is ready when the thumb moves. */
+@media (pointer: coarse) {
+  .peer {
+    display: none;
+  }
+  .hero-glow {
+    animation: none;
+  }
+}
+@media (max-width: 767px) {
+  .enter-rise,
+  .enter-fade-up,
+  .enter-fade {
+    animation-duration: 0.62s;
+    animation-delay: calc(var(--d, 0ms) * 0.4);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

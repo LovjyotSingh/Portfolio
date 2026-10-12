@@ -43,10 +43,10 @@ export function MobileMenu({ open, onClose, onNavigate }: Props) {
           role="dialog"
           aria-modal="true"
           aria-label="Site menu"
-          className="pointer-events-auto fixed inset-0 z-40 bg-bg/95 backdrop-blur-2xl md:hidden"
-          initial={{ clipPath: 'inset(0 0 100% 0)' }}
-          animate={{ clipPath: 'inset(0 0 0% 0)', transition: { duration: 0.7, ease } }}
-          exit={{ clipPath: 'inset(0 0 100% 0)', transition: { duration: 0.55, ease: [0.76, 0, 0.24, 1] } }}
+          className="pointer-events-auto fixed inset-0 z-40 bg-bg md:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 0.22, ease } }}
+          exit={{ opacity: 0, transition: { duration: 0.16, ease } }}
         >
           <div className="container-page flex h-full flex-col justify-between pt-24 pb-8">
             <nav aria-label="Mobile">
@@ -59,8 +59,8 @@ export function MobileMenu({ open, onClose, onNavigate }: Props) {
                       onClick={(e) => onNavigate(e, item.id)}
                       className="group flex items-baseline justify-between py-4"
                       initial={{ y: '110%' }}
-                      animate={{ y: 0, transition: { duration: 0.8, delay: 0.12 + i * 0.06, ease } }}
-                      exit={{ y: '110%', transition: { duration: 0.3, ease } }}
+                      animate={{ y: 0, transition: { duration: 0.45, delay: 0.04 + i * 0.035, ease } }}
+                      exit={{ y: '40%', opacity: 0, transition: { duration: 0.16, ease } }}
                     >
                       <span className="text-[clamp(2.75rem,14vw,4.5rem)] leading-none font-semibold tracking-[-0.05em]">
                         {item.label}
@@ -74,9 +74,9 @@ export function MobileMenu({ open, onClose, onNavigate }: Props) {
 
             <m.div
               className="space-y-6"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.4, ease } }}
-              exit={{ opacity: 0, transition: { duration: 0.2 } }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0, transition: { duration: 0.35, delay: 0.12, ease } }}
+              exit={{ opacity: 0, transition: { duration: 0.12 } }}
             >
               <a
                 href={profile.resume.href}

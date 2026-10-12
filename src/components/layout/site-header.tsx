@@ -13,7 +13,7 @@ import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { MobileMenu } from './mobile-menu';
 
 const island =
-  'pointer-events-auto rounded-full border border-line bg-bg/65 shadow-soft backdrop-blur-xl backdrop-saturate-150 transition-[background-color,border-color] duration-500';
+  'pointer-events-auto rounded-full border border-line bg-bg/88 shadow-soft backdrop-blur-md backdrop-saturate-150 transition-[background-color,border-color] duration-500 md:bg-bg/65 md:backdrop-blur-xl';
 
 export function SiteHeader() {
   const sectionIds = navItems.map((n) => n.id);
